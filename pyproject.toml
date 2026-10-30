@@ -2,6 +2,7 @@
 name = "atlas"
 version = "0.1.0"
 description = "Atlas - a small team assistant agent, built through the Agentic AI Developer Program."
+readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
 
