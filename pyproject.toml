@@ -1,0 +1,56 @@
+[project]
+name = "atlas"
+version = "0.1.0"
+description = "Atlas - a small team assistant agent, built through the Agentic AI Developer Program."
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+    "pytest-cov>=6.0",
+    "ruff>=0.8",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/atlas"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+addopts = "-q"
+
+[tool.uv]
+# Corporate TLS interception: trust the Windows certificate store
+# so uv can reach github.com for managed Python builds.
+system-certs = true
+
+[tool.coverage.run]
+source = ["src/atlas"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # pyflakes
+    "I",      # import sorting
+    "UP",     # pyupgrade
+    "B",      # bugbear
+    "SIM",    # simplify
+    "ASYNC",  # async correctness
+]
+
+[tool.ruff.format]
+docstring-code-format = true
