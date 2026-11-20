@@ -4,7 +4,11 @@ version = "0.1.0"
 description = "Atlas - a small team assistant agent, built through the Agentic AI Developer Program."
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "google-adk>=2.15.0",
+    "httpx>=0.28.1",
+    "pydantic>=2.14.2",
+]
 
 [dependency-groups]
 dev = [
@@ -51,6 +55,7 @@ select = [
     "B",      # bugbear
     "SIM",    # simplify
     "ASYNC",  # async correctness
+    "N"       # pep8 naming
 ]
 
 [tool.ruff.format]

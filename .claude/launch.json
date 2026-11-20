@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "adk-web",
+      "runtimeExecutable": "uv",
+      "runtimeArgs": ["run", "adk", "web", "src/atlas/agents", "--port", "8000"],
+      "port": 8000
+    }
+  ]
+}
